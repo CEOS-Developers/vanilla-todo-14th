@@ -1,39 +1,51 @@
 @font-face {
-  font-family: 'IM_Hyemin-Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2')
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
     format('woff');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
-  font-family: 'IM_Hyemin-Bold';
-  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Pretendard-Regular';
+  background-color: rgb(245, 180, 96);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.container h1 {
+  font-family: 'SBAggroB';
+}
 .container {
   border-radius: 10px;
   background-color: white;
-  width: 600px;
-  height: 800px;
+  width: 40rem;
+  height: 50rem;
   text-align: center;
   display: flex;
   flex-direction: column;
+  vertical-align: middle;
   align-items: stretch;
   box-shadow: 0 0 5px;
 }
 
 .container .pending-list {
-  margin-left: 1rem;
+  margin-left: 2rem;
   text-align: left;
   height: 48%;
 }
 
 .container .done-list {
-  margin-left: 1rem;
+  margin-left: 2rem;
   text-align: left;
   height: 48%;
 }
