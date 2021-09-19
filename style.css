@@ -93,22 +93,22 @@ h2 {
   margin: 0 10px;
 }
 
-/* append part */
-.append__container {
+/* add part */
+.add__container {
   background-color: yellowgreen;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.append__container input {
+.add__container input {
   margin: 10px 0 10px 10px;
   background-color: white;
   border: solid 1px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   width: 290px;
 }
-.append__container button {
+.add__container button {
   margin: 10px 10px 10px 0;
   background-color: var(--color-green);
   width: 30px;
