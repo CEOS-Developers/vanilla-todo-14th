@@ -74,6 +74,9 @@ h2 {
 .waiting__list__item {
   margin: 0 15px;
 }
+.waiting__list__item .deleteButton {
+  margin: 0 10px;
+}
 
 /* done part */
 .done__container {
@@ -85,6 +88,9 @@ h2 {
 }
 .done__list__item {
   margin: 0 15px;
+}
+.done__list__item .deleteButton {
+  margin: 0 10px;
 }
 
 /* append part */
