@@ -47,15 +47,21 @@ body {
 }
 
 .container .pending-list {
-  margin-left: 1rem;
   text-align: left;
   font-size: 1.3rem;
   height: 48%;
 }
 
+.container .pending-list li {
+  margin: 10px;
+}
+
 .container .done-list {
-  margin-left: 2rem;
   text-align: left;
   font-size: 1.3rem;
   height: 48%;
+}
+
+.container .done-list li {
+  margin: 10px;
 }
