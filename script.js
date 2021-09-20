@@ -2,13 +2,20 @@ const toDoForm = document.querySelector(".toDoForm");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector(".toDoList");
 const finishedList = document.querySelector(".finishedList");
+const lenTodo = document.getElementById("todo-count");
+const lenFin = document.getElementById("fin-count");
 
 let toDoArr = [];
 let finArr = [];
 
+function setLength(){
+    lenTodo.innerText = toDoArr.length
+    lenFin.innerText = finArr.length
+}
+
 function deleteData(arr,target){
     // filter target from arr
-    console.log(target.id)
+    // target.id가 string으로 가져와지더라 - 그래서 값을 비교를 못했음
     const result = arr.filter(element => element.id!==parseInt(target.id))
     return result
 }
@@ -21,13 +28,12 @@ function deleteHandler(event){
         toDoArr = deleteData(toDoArr,target)
         // remove from parent
         toDoList.removeChild(target);
-        console.log(toDoArr)
     }else{
         // delete from finArr
         finArr = deleteData(finArr,target)
         finishedList.removeChild(target);
-        console.log(finArr)
     }
+    setLength()
 }
 
 function moveData(event){
@@ -49,6 +55,7 @@ function moveData(event){
 
         toDoList.appendChild(target)
     }
+    setLength()
 }
 
 function printData(text) {
@@ -79,7 +86,8 @@ function printData(text) {
       text: text,
     };
     toDoArr.push(toDoObj);
-  }
+    setLength()   
+}
 
 function addToDo(event) {
     // 입력받아 추가하는 함수
@@ -92,4 +100,4 @@ function init() {
     toDoForm.addEventListener("submit", addToDo);
 }
   
-  init();
+init();
