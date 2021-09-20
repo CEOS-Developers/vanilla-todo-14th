@@ -19,10 +19,7 @@
         해야할 것들
       </div>
       <div class="pending-list">
-        fdsafdas<br />
-        fdsafdas<br />
-        fdsafdas<br />
-        fdsafdas
+        <ul class="toDos"></ul>
       </div>
 
       <div
@@ -32,16 +29,17 @@
         다했다~
       </div>
       <div class="done-list">
-        fdsafdas<br />
-        fdsafdas<br />
-        fdsafdas<br />
-        fdsafdas
+        <ul class="dones"></ul>
       </div>
-      <input
-        class="input"
-        placeholder="새로운 할일 추가"
-        style="text-align: center; border-radius: 0.5rem; height: 2rem"
-      />
+      <form class="inputForm">
+        <input
+          name="inputText"
+          class="inputText"
+          type="text"
+          placeholder="할게 뭐가 있지?"
+          autofocus
+        />
+      </form>
     </div>
   </body>
   <script src="script.js"></script>
