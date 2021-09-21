@@ -4,7 +4,7 @@ import AddTodoBtn from './AddTodoBtn.js';
 
 function App({app, initialState, todoID}) {
 
-    this.todoID = localStorage.getItem('todoID') ? localStorage.getItem('todoID') : todoID;
+    this.todoID = localStorage.getItem('todoID') ? JSON.parse(localStorage.getItem('todoID')) : todoID;
     this.state = {
         waitingTodo: localStorage.getItem('waitingTodo') ? JSON.parse(localStorage.getItem('waitingTodo')) : initialState.waitingTodo,
         finishedTodo: localStorage.getItem('finishedTodo') ? JSON.parse(localStorage.getItem('finishedTodo')) : initialState.finishedTodo,
@@ -16,7 +16,7 @@ function App({app, initialState, todoID}) {
             ...nextState
         }
 
-        localStorage.setItem('todoID', this.todoID);
+        localStorage.setItem('todoID', JSON.stringify(this.todoID));
         localStorage.setItem('waitingTodo', JSON.stringify([...this.state.waitingTodo]));
         localStorage.setItem('finishedTodo', JSON.stringify([...this.state.finishedTodo]));
 
@@ -70,7 +70,7 @@ function App({app, initialState, todoID}) {
 
     this.onDeleteFinishedTodoItem = (id) => {
         this.setState({
-            finishedTodo: this.state.waitingTodo.filter(todo => todo.todoID !== id),
+            finishedTodo: this.state.finishedTodo.filter(todo => todo.todoID !== id),
         })
     }
 
