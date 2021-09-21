@@ -14,7 +14,12 @@ function WaitingList({location, initialState, onClickTodoItem, onDeleteTodoItem}
     }
 
     this.render = (waitingTodo) => {
+
+        const p = document.querySelector('.waiting-todo-list-count');
+        p.textContent = waitingTodo.length;
+
         location.innerHTML = '';
+
         waitingTodo.map(todo => {
             const li = document.createElement('li');
             const btn = document.createElement('button');

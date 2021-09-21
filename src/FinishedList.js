@@ -14,7 +14,12 @@ function FinishedList({location, initialState, onClickTodoItem, onDeleteTodoItem
     }
 
     this.render = (finishedTodo) => {
+
+        const p = document.querySelector('.finished-todo-list-count');
+        p.textContent = finishedTodo.length;
+
         location.innerHTML = '';
+
         finishedTodo.map(todo => {
             const li = document.createElement('li');
             const btn = document.createElement('button');

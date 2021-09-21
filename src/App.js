@@ -25,7 +25,7 @@ function App({app, initialState, todoID}) {
                     todoContent: value,
                 },
                 ...this.state.waitingTodo,
-            ]
+            ],
         });
     }
 
@@ -38,7 +38,7 @@ function App({app, initialState, todoID}) {
                     todoContent: todoContent,
                 },
                 ...this.state.finishedTodo,
-            ]
+            ],
         })
     }
 
