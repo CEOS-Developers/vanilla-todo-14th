@@ -10,6 +10,7 @@ function createTodoList(todoObj){
     li.innerText=todoObj.text;
     li.id=todoObj.id;
     img.src="./img/bin.png";
+    img.addEventListener("click", deleteTodo);
     li.appendChild(img);
     doingTodoList.appendChild(li);
 }
@@ -29,6 +30,13 @@ addTodoButton.addEventListener("click", onClickAddTodo);
 /*doing->done*/
 
 /*delete todo*/
+function deleteTodo(e){
+    console.log(e);
+    const li=e.target.parentElement; 
+    li.remove();
+    todoArray=todoArray.filter(todo=>todo.id!=parseInt(li.id));
+    saveTodo();
+}
 
 /*save todo*/
 function saveTodo(){
