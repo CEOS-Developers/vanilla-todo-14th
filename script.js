@@ -15,7 +15,7 @@ function setLength(){
 
 function deleteData(arr,target){
     // filter target from arr
-    // target.id가 string으로 가져와지더라 - 그래서 값을 비교를 못했음
+    // target.id가 string으로 가져와짐 - 그래서 처음에 값을 비교를 못했음
     const result = arr.filter(element => element.id!==parseInt(target.id))
     return result
 }
@@ -99,5 +99,5 @@ function addToDo(event) {
 function init() {
     toDoForm.addEventListener("submit", addToDo);
 }
-  
+
 init();

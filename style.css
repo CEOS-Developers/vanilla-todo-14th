@@ -23,6 +23,7 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    word-break: break-all;
 }
 span{
     flex:1;
