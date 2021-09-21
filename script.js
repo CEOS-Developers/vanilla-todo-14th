@@ -42,6 +42,6 @@ function finishTask(e) {
 function deleteTask(e) {
   const button = e.target;
   const li = button.parentNode;
-  todoList.removeChild(li);
-  doneList.removeChild(li);
+  const whichList = li.parentNode;
+  whichList.removeChild(li);
 }
