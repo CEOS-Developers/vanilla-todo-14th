@@ -75,6 +75,10 @@ p {
   flex-direction: column;
 }
 
+.finished-list {
+  text-decoration-line: line-through;
+}
+
 .todo-item {
   margin: 0;
   padding: 0.7rem;
@@ -84,12 +88,18 @@ p {
   justify-content: space-between;
 }
 
+.todo-item:hover .delete-btn {
+  visibility: visible;
+}
+
 .delete-btn {
   height: 1.1rem;
   width: 1.1rem;
     
   background: center url(img/bin.png);
   background-size: cover;
+
+  visibility: hidden;
 }
 
 /* Footer */
