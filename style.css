@@ -29,6 +29,36 @@ span{
     flex:1;
 }
 
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+li:hover .deleteBtn{
+    visibility: visible;
+}
+.deleteBtn{
+    visibility: hidden;
+    animation: fadein 5s;
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+}
+
+.fin{
+    text-decoration: line-through;
+    color: grey;
+}
+
 #text-input{
     flex: 1;
     padding: 0.2rem;
