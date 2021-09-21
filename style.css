@@ -52,6 +52,10 @@ li {
 .title{
   padding-left: 20px;
 }
+#done{
+  text-decoration:line-through;
+  color:lightgray;
+}
 #todo-input{
     border: 1px solid lightgray;
     width: 85%;

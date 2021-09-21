@@ -2,6 +2,7 @@
 const todoInput=document.getElementById("todo-input");
 const addTodoButton=document.getElementById("todo-button");
 const doingTodoList=document.getElementById("doing");
+const doneTodoList=document.getElementById("done");
 let todoArray=[];
 
 function createTodoList(todoObj){
@@ -9,17 +10,19 @@ function createTodoList(todoObj){
     const img=document.createElement("img");
     li.innerText=todoObj.text;
     li.id=todoObj.id;
+    li.addEventListener("click", toggleTodo);
     img.src="./img/bin.png";
     img.addEventListener("click", deleteTodo);
     li.appendChild(img);
-    doingTodoList.appendChild(li);
+    todoObj.type? doingTodoList.appendChild(li):doneTodoList.appendChild(li);
+    
 }
 function onClickAddTodo(e){
     e.preventDefault();
     const todoObj={
         "text":todoInput.value,
         "id":Date.now(),
-        "type": 1,
+        "type": true,
     }
     createTodoList(todoObj);
     todoArray.push(todoObj);
@@ -27,8 +30,19 @@ function onClickAddTodo(e){
     todoInput.value="";
 }
 addTodoButton.addEventListener("click", onClickAddTodo);
-/*doing->done*/
-
+/*doing->done, done->doing*/
+function toggleTodo(e){
+    todoArray.forEach(todo=>{
+        if (todo.id===parseInt(e.target.id)){
+            const li=e.target; 
+            li.remove();
+            //type을 반전
+            todo.type=!todo.type;
+            createTodoList(todo);
+            saveTodo();
+        }
+    })
+}
 /*delete todo*/
 function deleteTodo(e){
     console.log(e);
@@ -40,7 +54,7 @@ function deleteTodo(e){
 
 /*save todo*/
 function saveTodo(){
-    localStorage.setItem("todo", JSON.stringify(todoArray))
+    localStorage.setItem("todo", JSON.stringify(todoArray));
 }
 const savedTodos=localStorage.getItem("todo");
 if (savedTodos){
