@@ -30,6 +30,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom:20px;
 }
 .container {
   width: 350px;
@@ -74,5 +75,9 @@ li {
 img{
   width:20px;
   height:20px;
-  margin-bottom:20px;
+  opacity:0;
+}
+img:hover{
+  transition:opacity .3s ease; 
+  opacity:1;
 }
