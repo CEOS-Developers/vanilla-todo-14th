@@ -98,6 +98,7 @@ function addToDo(event) {
 
 function init() {
     toDoForm.addEventListener("submit", addToDo);
+    setLength()
 }
 
 init();
