@@ -9,8 +9,11 @@
     <script defer type="module" src="script.mjs"></script>
   </head>
 
+  <!-- body = waiting part + done part + add part -->
   <body>
     <main class="container">
+
+      <!-- waiting part -->
       <section class="waiting__container">
         <div class="waiting__title"><h2>✍진행 중인 작업(<span class ="waiting__count">0</span>)</h2></div>
         <div class="waiting__content">
@@ -18,6 +21,8 @@
           </ul>
         </div>
       </section>
+
+      <!-- done part -->
       <section class="done__container">
         <div class="done__title"><h2>😆완료된 작업(<span class ="done__count">0</span>)</h2></div>
         <div class="done__content">
@@ -25,6 +30,8 @@
           </ul>
         </div>
       </section>
+
+      <!-- add part -->
       <section class="add__container">
         <input class= "add__item" type="text" value="">
         <button class = "add__button">+</button>
