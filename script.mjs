@@ -55,6 +55,7 @@ function render(){
     }
   }
 
+
   waitingListInnerHTML+="</ul>";
   doneListInnerHTML+="</ul>";
 
@@ -96,7 +97,42 @@ function render(){
   //update counts
   waitingCount.innerHTML=waitingNum;
   doneCount.innerHTML=doneNum;
+
+  localStorage.clear();
+  saveToLocalStorage(itemList);
+  
 }
+
+
+function saveToLocalStorage(itemList){
+  itemList.forEach((v,i)=>{
+    localStorage.setItem(String(i),JSON.stringify(v));
+  })
+  console.log(localStorage);
+
+}
+
+function LoadFromLocalStorage(){
+  const res=[];
+  const keys= Object.keys(localStorage);
+  for (let i =0; i< keys.length; i++){
+    const key = keys[i];
+    const value= localStorage[key];
+    res.push(JSON.parse(value));
+  }
+  
+  itemList=res;
+}
+
+
+
+
+// initial run to load from local Storage
+LoadFromLocalStorage();
+render();
+
+
+
 
 // change the state of item
 function changeState(){
@@ -117,6 +153,7 @@ function changeState(){
 function deleteItem(){
   let id = this.parentNode.firstChild.getAttribute("id");
   itemList.splice(id,1 );
+  localStorage.removeItem(String(id));
   render();
 }
 
@@ -137,4 +174,9 @@ function disappearDeleteButton(){
   const button = this.lastChild;
   button.style.display="none";
   this.style.color="black";
+}
+
+// localStorage
+function hello(){
+  alert('hello!');
 }
