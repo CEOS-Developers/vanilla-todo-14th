@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="ko">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>Vanilla Todo by SEEWON</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
-    <div class="container"></div>
-</body>
-<script src="script.js"></script>
-
+  <body>
+    <header>
+      <h1>오늘 할 일</h1>
+    </header>
+    <form>
+      <input
+        class="inputToDo"
+        type="text"
+        placeholder="할 일 추가하기"
+        maxlength="20"
+      />
+      <button class="inputButton" type="submit">➕</button>
+    </form>
+    <div class="toDoContainer">
+      <ul class="toDoList"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

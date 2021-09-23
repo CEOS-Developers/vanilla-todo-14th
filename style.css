@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'SBAggroB';
+}
+
+body {
+  background-color: #f0e5cf;
+}
+
+header,
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.toDoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.toDoDiv {
+  width: 30rem;
+  height: 2rem;
+  margin: 0.5rem;
+  background-color: #f7f6f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  background-color: #c8c6c6;
+}
+
+.completed .toDoLi {
+  text-decoration: line-through;
+}
+
+.toDoDiv .deleteButton {
+  background-color: #4b6587;
+  width: 2rem;
+  height: 2rem;
+}
+
+.toDoDiv .successButton {
+  background-color: #c8c6c6;
+  width: 2rem;
+  height: 2rem;
+}
+
+.deleteButton:hover,
+.successButton:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+.toDoLi {
+  list-style: none;
+}
