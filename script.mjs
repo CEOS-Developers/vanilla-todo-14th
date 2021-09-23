@@ -7,6 +7,7 @@ let itemList = [];
 let addButton = document.querySelector('.add__button');
 let newItem = document.querySelector('.add__item');
 let waitingCount = document.querySelector('.waiting__count');
+let doneCount = document.querySelector('.done__count');
 
 // addButton : when input is not null , append item to itemList
 addButton.addEventListener("click", ()=>{
@@ -21,9 +22,10 @@ addButton.addEventListener("click", ()=>{
 
 })
 
-
 // render : show items by the type of their state
 function render(){
+  let waitingNum=0;
+  let doneNum=0;
 
   let waitingListInnerHTML ="<ul>";
   let doneListInnerHTML = "<ul>";
@@ -35,6 +37,7 @@ function render(){
       + `<span class= "waiting__list__item" id = `+i+`>`+itemList[i].content+`</span>`
       + `<button class="deleteButton" id = ` + i + `><i class="fas fa-trash"></i></button>`
       +"</li>";
+      waitingNum+=1;
     }
 
     else{
@@ -42,6 +45,7 @@ function render(){
       +`<span class= "done__list__item" id = `+i+`>`+itemList[i].content+`</span>`
       + `<button class="deleteButton" id = ` + i + `><i class="fas fa-trash"></i></button>`
       +"</li>";
+      doneNum+=1;
     }
   }
 
@@ -53,7 +57,6 @@ function render(){
 
 
   // add eventlistners
-
   let deleteButtonList = document.querySelectorAll('.deleteButton');
   for (let i =0; i<deleteButtonList.length; i++){
     deleteButtonList[i].addEventListener("click", deleteItem);
@@ -69,7 +72,9 @@ function render(){
     doneElementList[i].addEventListener("click",changeState);
   }
 
-  
+  //update counts
+  waitingCount.innerHTML=waitingNum;
+  doneCount.innerHTML=doneNum;
 }
 
 // change the state of item
