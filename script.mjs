@@ -42,7 +42,7 @@ function render(){
 
     else{
       doneListInnerHTML+= `<li>` 
-      +`<span class= "done__list__item" id = `+i+`>`+itemList[i].content+`</span>`
+      +`<span class= "done__list__item" id = `+i+` style="text-decoration: 2px solid line-through red">`+itemList[i].content+`</span>`
       + `<button class="deleteButton" id = ` + i + `><i class="fas fa-trash"></i></button>`
       +"</li>";
       doneNum+=1;
