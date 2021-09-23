@@ -4,6 +4,9 @@
   --color-green: #2ec1ac;
   --color-white: #ffffff;
   --color-pink: #fdc7ff;
+  --color-waiting: #fff5bf;
+  --color-done: #fff1a0;
+  --color-add: #fff5bf;
 
   /* Font size */
   --font-medium: 18px;
@@ -65,15 +68,21 @@ h2 {
 
 /* waiting part */
 .waiting__container {
-  background-color: yellow;
+  background-color: var(--color-waiting);
   height: 275px;
 }
 .waiting__title {
   margin: 0 15px;
 }
+.waiting__content {
+  overflow-y: scroll;
+  height: 80%;
+}
+
 .waiting__list__item {
   margin: 0 15px;
 }
+
 .waiting__list__item .deleteButton {
   margin: 0 10px;
   display: none;
@@ -81,11 +90,15 @@ h2 {
 
 /* done part */
 .done__container {
-  background-color: var(--color-pink);
+  background-color: var(--color-done);
   height: 275px;
 }
 .done__title {
   margin: 0 15px;
+}
+.done__content {
+  overflow-y: scroll;
+  height: 80%;
 }
 .done__list__item {
   margin: 0 15px;
@@ -96,7 +109,7 @@ h2 {
 
 /* add part */
 .add__container {
-  background-color: yellowgreen;
+  background-color: var(--color-add);
   height: 50px;
   display: flex;
   flex-direction: row;
