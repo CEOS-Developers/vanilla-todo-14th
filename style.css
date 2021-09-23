@@ -76,6 +76,7 @@ h2 {
 }
 .waiting__list__item .deleteButton {
   margin: 0 10px;
+  display: none;
 }
 
 /* done part */

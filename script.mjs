@@ -30,20 +30,27 @@ function render(){
   let waitingListInnerHTML ="<ul>";
   let doneListInnerHTML = "<ul>";
 
+
   for (let i = 0; i <itemList.length; i++){
     
     if (itemList[i].state=="waiting"){
-      waitingListInnerHTML+= `<li>` 
+      waitingListInnerHTML+= `<li class="waitingListTag">` 
       + `<span class= "waiting__list__item" id = `+i+`>`+itemList[i].content+`</span>`
-      + `<button class="deleteButton" id = ` + i + `><i class="fas fa-trash"></i></button>`
-      +"</li>";
+      + `<button class="deleteButton" style="display:none">
+      <i class="fas fa-trash"></i>
+      </button>`
+      +"</li>"
+      ;
       waitingNum+=1;
+
     }
 
     else{
-      doneListInnerHTML+= `<li>` 
+      doneListInnerHTML+= `<li class="doneListTag">` 
       +`<span class= "done__list__item" id = `+i+` style="text-decoration: 2px solid line-through red">`+itemList[i].content+`</span>`
-      + `<button class="deleteButton" id = ` + i + `><i class="fas fa-trash"></i></button>`
+      + `<button class="deleteButton" style="display:none">
+      <i class="fas fa-trash"></i>
+      </button>`
       +"</li>";
       doneNum+=1;
     }
@@ -65,12 +72,27 @@ function render(){
   let waitingElementList = document.querySelectorAll('.waiting__list__item');
   for (let i =0; i<waitingElementList.length;i++){
     waitingElementList[i].addEventListener("click",changeState);
+    
   }
 
   let doneElementList = document.querySelectorAll('.done__list__item');
   for (let i =0; i<doneElementList.length;i++){
     doneElementList[i].addEventListener("click",changeState);
   }
+
+  let waitingListTag = document.querySelectorAll('.waitingListTag');
+  let doneListTag=document.querySelectorAll('.doneListTag');
+  for (let i =0; i<waitingListTag.length; i++){
+    waitingListTag[i].addEventListener("mouseover",appearDeleteButton);
+    waitingListTag[i].addEventListener("mouseout",disappearDeleteButton);
+  }
+  for (let i =0; i<doneListTag.length;i++){
+    doneListTag[i].addEventListener("mouseover",appearDeleteButton);
+    doneListTag[i].addEventListener("mouseout",disappearDeleteButton);
+    
+  }
+
+
 
   //update counts
   waitingCount.innerHTML=waitingNum;
@@ -94,8 +116,24 @@ function changeState(){
 
 // delete the item
 function deleteItem(){
-  let id = this.getAttribute("id");
+  let id = this.parentNode.firstChild.getAttribute("id");
   itemList.splice(id,1 );
   render();
 }
 
+// appearDeleteButton
+function appearDeleteButton(){
+  const button = this.lastChild;
+  button.style.display="inline";
+  button.style.opacity=0;
+  button.style.transition="all 1s ease";
+  setTimeout(()=>{
+    button.style.opacity=1;
+  });
+}
+
+// disappearDeleteButton
+function disappearDeleteButton(){
+  const button = this.lastChild;
+  button.style.display="none";
+}
