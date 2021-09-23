@@ -12,24 +12,20 @@
   <body>
     <div class="container">
       <div class="waiting__container">
-        <div class="waiting__title"><h2>대기중 (0)</h2></div>
+        <div class="waiting__title"><h2>대기중 (<span class ="waiting__count">0</span>)</h2></div>
         <ul class="waiting__list">
-          <li class= "waiting__list__item">추가된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
-          <li class= "waiting__list__item">추가된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
-          <li class= "waiting__list__item">추가된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
+         <!-- waiting_show를 통해 동적으로 추가 -->
         </ul>
       </div>
       <div class="done__container">
-        <div class="done__title"><h2>완료됨 (7)</h2></div>
+        <div class="done__title"><h2>완료됨 (<span class ="done__count">0</span>)</h2></div>
         <ul class="done__list">
-          <li class ="done__list__item">완료된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
-          <li class ="done__list__item">완료된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
-          <li class ="done__list__item">완료된 할일<button class="deleteButton"><i class="fas fa-trash"></i></button></li>
+         
         </ul>
       </div>
       <div class="add__container">
-        <input type="text" value="새로운 할 일 추가">
-        <button>+</button>
+        <input class= "add__item" type="text" value="새로운 할 일 추가">
+        <button class = "add__button">+</button>
         
       </div>
       
