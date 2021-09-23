@@ -16,10 +16,11 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'ELAND_Choice_M';
 }
 
 /* default settings */
+
 html,
 body {
   margin: 0;
@@ -50,6 +51,13 @@ body {
 }
 
 /* Typography */
+@font-face {
+  font-family: 'ELAND_Choice_M';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 h2 {
   font-size: var(--font-medium);
 }
@@ -79,8 +87,8 @@ h2 {
   height: 80%;
 }
 
-.waiting__list__item {
-  margin: 0 15px;
+span.waiting__list__item {
+  padding: 0 15px;
 }
 
 .waiting__list__item .deleteButton {
@@ -117,10 +125,11 @@ h2 {
 }
 .add__container input {
   margin: 10px 0 10px 10px;
+  padding: 0 10px;
   background-color: white;
   border: solid 1px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-  width: 290px;
+  width: 270px;
 }
 .add__container button {
   margin: 10px 10px 10px 0;

@@ -34,7 +34,7 @@ function render(){
   for (let i = 0; i <itemList.length; i++){
     
     if (itemList[i].state=="waiting"){
-      waitingListInnerHTML+= `<li class="waitingListTag">` 
+      waitingListInnerHTML+= `<li class="waitingListTag" style="margin:10px 0">` 
       + `<span class= "waiting__list__item" id = `+i+`>`+itemList[i].content+`</span>`
       + `<button class="deleteButton" style="display:none">
       <i class="fas fa-trash"></i>
@@ -46,7 +46,7 @@ function render(){
     }
 
     else{
-      doneListInnerHTML+= `<li class="doneListTag">` 
+      doneListInnerHTML+= `<li class="doneListTag" style="margin:10px 0">` 
       +`<span class= "done__list__item" id = `+i+` style="text-decoration: 2px solid line-through red">`+itemList[i].content+`</span>`
       + `<button class="deleteButton" style="display:none">
       <i class="fas fa-trash"></i>
@@ -129,6 +129,7 @@ function appearDeleteButton(){
   button.style.transition="all 1s ease";
   setTimeout(()=>{
     button.style.opacity=1;
+    this.style.color="blue";
   });
 }
 
@@ -136,4 +137,5 @@ function appearDeleteButton(){
 function disappearDeleteButton(){
   const button = this.lastChild;
   button.style.display="none";
+  this.style.color="black";
 }
