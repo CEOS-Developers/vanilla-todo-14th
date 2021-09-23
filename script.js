@@ -7,31 +7,36 @@ let todoArray=[];
 const doingCount=document.getElementById("doing-count");
 const doneCount=document.getElementById("done-count");
 
+/*create todo li*/
 function createTodoList(todoObj){
     const li=document.createElement("li");
     const img=document.createElement("img");
-    li.innerText=todoObj.text;
+    li.innerText="🐈 "+todoObj.text;
     li.id=todoObj.id;
     li.addEventListener("click", toggleTodo);
     img.src="./img/bin.png";
     img.addEventListener("click", deleteTodo);
     li.appendChild(img);
     todoObj.type? doingTodoList.appendChild(li):doneTodoList.appendChild(li);
-    
 }
+
+/*click add todo button*/
 function onClickAddTodo(e){
     e.preventDefault();
-    const todoObj={
+    if (todoInput.value){
+        const todoObj={
         "text":todoInput.value,
         "id":Date.now(),
         "type": true,
+        }
+        createTodoList(todoObj);
+        todoArray.push(todoObj);
+        saveTodo();
     }
-    createTodoList(todoObj);
-    todoArray.push(todoObj);
-    saveTodo();
     todoInput.value="";
 }
 addTodoButton.addEventListener("click", onClickAddTodo);
+
 /*doing->done, done->doing*/
 function toggleTodo(e){
     todoArray.forEach(todo=>{
@@ -45,6 +50,7 @@ function toggleTodo(e){
         }
     })
 }
+
 /*delete todo*/
 function deleteTodo(e){
     console.log(e);
