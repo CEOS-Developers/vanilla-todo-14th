@@ -6,7 +6,7 @@
     <title>Vanilla Todo</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/2fdda89094.js" crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+    <script defer type="module" src="script.mjs"></script>
   </head>
 
   <body>
@@ -14,7 +14,6 @@
       <div class="waiting__container">
         <div class="waiting__title"><h2>대기중 (<span class ="waiting__count">0</span>)</h2></div>
         <ul class="waiting__list">
-         <!-- waiting_show를 통해 동적으로 추가 -->
         </ul>
       </div>
       <div class="done__container">
@@ -24,7 +23,7 @@
         </ul>
       </div>
       <div class="add__container">
-        <input class= "add__item" type="text" value="새로운 할 일 추가">
+        <input class= "add__item" type="text" value="">
         <button class = "add__button">+</button>
         
       </div>
