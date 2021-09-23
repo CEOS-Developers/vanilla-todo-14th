@@ -15,7 +15,6 @@ addButton.addEventListener("click", ()=>{
   if (newItem.value!=""){
     itemList.push(new Item(newItem.value));
     newItem.value="";
-    newItem.focus();
   }
 
   render();

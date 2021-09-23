@@ -33,7 +33,11 @@
 
       <!-- add part -->
       <section class="add__container">
-        <input class= "add__item" type="text" value="">
+        <input class= "add__item" type="text"
+        style="text-align: center;"
+         placeholder="새로운 할 일을 추가해주세요!"
+         onfocus="this.placeholder=``; this.style.textAlign=`left`"
+         onblur="this.placeholder=`새로운 할 일을 추가해주세요!`; this.style.textAlign=`center`">
         <button class = "add__button">+</button>
       </section>
     </main>
