@@ -1,7 +1,7 @@
 /* Global */
 :root {
   /* Color */
-  --color-green: #2ec1ac;
+  --color-dark-orange: #ac5300;
   --color-white: #ffffff;
   --color-pink: #fdc7ff;
   --color-waiting: #fff5bf;
@@ -47,7 +47,7 @@ body {
   justify-content: center;
 
   /* Coloring */
-  background-color: var(--color-green);
+  background-color: var(--color-dark-orange);
 }
 
 /* Typography */
@@ -143,7 +143,7 @@ span.waiting__list__item {
 }
 .add__container button {
   margin: 10px 10px 10px 0;
-  background-color: var(--color-green);
+  background-color: var(--color-dark-orange);
   width: 30px;
   height: 30px;
   text-align: center;
