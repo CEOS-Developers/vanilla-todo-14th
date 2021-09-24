@@ -81,7 +81,6 @@ h2 {
   background-color: var(--color-waiting);
   height: 275px;
   position: relative;
-  z-index: 0;
   border-top-left-radius: var(--size-border-radius);
   border-top-right-radius: var(--size-border-radius);
 }
