@@ -1,11 +1,11 @@
 # 🙌 Introduction
-이 저장소는 IT창업동아리 <a herf="https://www.ceos.or.kr/">CEOS</a> 프론트엔드 팀에서 스터디를 하며 수행한 미션의 결과를 공유합니다.
+이 저장소는 IT창업동아리 CEOS(https://www.ceos.or.kr/) 프론트엔드 팀에서 스터디를 하며 수행한 미션의 결과를 공유합니다.
 
 # 🚩 미션 원문 링크
 https://github.com/CEOS-Developers/vanilla-todo-14th
 
 # 🚩 결과물 링크
-
+https://bonjunku.github.io/vanilla-todo-14th/
 
 # ✍ 요구사항 분석
 
@@ -22,13 +22,10 @@ https://github.com/CEOS-Developers/vanilla-todo-14th
 - [x] 삭제 버튼 안보이게 - js로 처리
 - [x] 완료됨 영역에서는 흐리게 + 취소선
 
-1. js
+3. js
 - [x] 목록 개수 카운트
 - [x] 클릭시 반대편으로 이동
 - [x] 입력 후 추가버튼 누르면 대기열에 추가
-
-<br />
-<br />
 
 # ✔ 필수 요건
 - [x] 결과 화면 구현
