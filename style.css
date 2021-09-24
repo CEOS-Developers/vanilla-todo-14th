@@ -78,6 +78,8 @@ h2 {
 .waiting__container {
   background-color: var(--color-waiting);
   height: 275px;
+  position: relative;
+  z-index: 0;
 }
 .waiting__title {
   margin: 0 15px;
@@ -96,6 +98,14 @@ span.waiting__list__item {
   display: none;
 }
 
+.lion {
+  opacity: 0;
+  width: 70%;
+  top: 100px;
+  left: 25px;
+  position: absolute;
+  transition: all 0.5s ease-out;
+}
 /* done part */
 .done__container {
   background-color: var(--color-done);

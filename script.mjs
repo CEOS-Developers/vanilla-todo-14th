@@ -6,10 +6,11 @@ import {Item} from './item.mjs'
 let itemList = [];
 
 // Bring node from index.html
-let addButton = document.querySelector('.add__button');
-let addInput = document.querySelector('.add__input');
+const addButton = document.querySelector('.add__button');
+const addInput = document.querySelector('.add__input');
 let waitingCount = document.querySelector('.waiting__count');
 let doneCount = document.querySelector('.done__count');
+const lion= document.querySelector('.lion');
 
 // initial run to load from local Storage
 LoadFromLocalStorage();
@@ -27,9 +28,6 @@ addButton.addEventListener("click", ()=>{
 
 // render : make innerHTML of each list with reduce
 function render(){
-  let waitingCountNum=0;
-  let doneCountNum=0;
-
   let waitingListInnerHTML ="";
   let doneListInnerHTML = "";
 
@@ -65,6 +63,13 @@ function render(){
   //update counts
   waitingCount.innerHTML=count(itemList,'waiting');
   doneCount.innerHTML=count(itemList,'done');
+
+   //summon Lion!
+   console.log(waitingCount.innerHTML,doneCount.innerHTML);
+   if (waitingCount.innerHTML==0 && doneCount.innerHTML>0)
+   summonLion();
+   else vanishLion();
+ 
 
   //update local storage
   localStorage.clear();
@@ -141,4 +146,19 @@ function disappearDeleteButton(){
   const button = this.lastChild;
   button.style.display="none";
   this.style.color="black";
+}
+
+//when everything is done, LION comes out!
+function summonLion(){
+  lion.style.display='block';
+  setTimeout(()=>{
+    lion.style.opacity=1;
+    lion.style.top='30px';
+  })
+}
+
+function vanishLion(){
+  lion.style.opacity=0;
+  lion.style.display='none';
+  lion.style.top='100px';
 }
