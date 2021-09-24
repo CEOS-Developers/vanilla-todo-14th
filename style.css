@@ -9,7 +9,22 @@
   margin-left: 15px;
   display: flex;
   flex: 1;
+  flex-direction: column;
   list-style: none;
+  overflow-y: scroll;
+}
+
+#waitingList li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+/* close */
+.close img {
+  width: 20px;
+  height: 20px;
 }
 
 /* input box */
