@@ -40,21 +40,31 @@ function showList() {
     list +=
       "<li>" +
       itemList[i] +
-      "<span class='close' id=" +
+      "<button class='close' id=" +
       i +
       ">" +
       "<img src='img/bin.png'/>" +
-      "</span></li>";
+      "</button></li>";
   }
-  // list += "</ul>";
   document.getElementById("waitingList").innerHTML = list;
-  console.log(list);
   console.log(itemList);
+  waitingCount();
 
-  // let deleteButtons = document.querySelectorAll(".close");
-  // for (let i = 0; i, deleteButtons.length; i++) {
-  //   deleteButtons[i].addEventListener("click", deleteItem);
-  // }
+  let deleteButtons = document.querySelectorAll(".close");
+  for (let i = 0; i, deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener("click", deleteItem);
+  }
+}
+
+function deleteItem() {
+  let id = this.getAttribute("id");
+  itemList.splice(id, 1);
+  showList();
 }
 
 // 3) 대기중의 숫자 count
+
+function waitingCount() {
+  let count = itemList.length;
+  document.getElementById("waitingCount").innerHTML = count;
+}
