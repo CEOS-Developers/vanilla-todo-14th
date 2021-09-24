@@ -34,7 +34,7 @@ function render(){
   // waitingDoneInnerHTML is an array of InnerHTMLs
   const waitingDoneInnerHTML=itemList.reduce((accum,value,index)=>{
     const accumIndex = (value.state==="waiting")? 0 : 1;
-    const textDecoration = (value.state==="waiting")? "": `style="text-decoration: 2px solid line-through red"`;
+    const textDecoration = (value.state==="waiting")? "": `style="text-decoration: 3px solid line-through brown"`;
 
     accum[accumIndex]+= `<li class="${value.state}ListTag" style="margin:10px 0">` 
     + `<span class= "${value.state}__list__item" id = "${index}" ${textDecoration}>`+value.content+`</span>`
@@ -65,7 +65,6 @@ function render(){
   doneCount.innerHTML=count(itemList,'done');
 
    //summon Lion!
-   console.log(waitingCount.innerHTML,doneCount.innerHTML);
    if (waitingCount.innerHTML==0 && doneCount.innerHTML>0)
    summonLion();
    else vanishLion();
@@ -137,7 +136,8 @@ function appearDeleteButton(){
   button.style.transition="all 1s ease";
   setTimeout(()=>{
     button.style.opacity=1;
-    this.style.color="blue";
+    this.style.color="brown";
+    this.style.fontWeight="900";
   });
 }
 
@@ -146,6 +146,7 @@ function disappearDeleteButton(){
   const button = this.lastChild;
   button.style.display="none";
   this.style.color="black";
+  this.style.fontWeight="400";
 }
 
 //when everything is done, LION comes out!
@@ -153,7 +154,7 @@ function summonLion(){
   lion.style.display='block';
   setTimeout(()=>{
     lion.style.opacity=1;
-    lion.style.top='30px';
+    lion.style.top='70px';
   })
 }
 
