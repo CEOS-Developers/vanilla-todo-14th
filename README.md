@@ -37,9 +37,6 @@ https://github.com/CEOS-Developers/vanilla-todo-14th
 - [x] lowerCamelCase
 - [x] 코딩 단위 기능별 Commit 메세지 작성
 
-<br />
-<br />
-
 # ✔ 선택 요건
 - [x] 외부 폰트 사용: 눈누 사이트에서 ELAND_Choice_M 사용
 - [x] local storage로 데이터 보존
