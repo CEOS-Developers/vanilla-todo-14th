@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,23 +14,19 @@
         <div class="title">
              <ul>toDo list</ul>
         </div>
-        <form class="input">
+        <p>
             <input
               id="toDoList"
               type="text"
               placeholder="새로운 할일 추가"
             />
-            <button type="submit" id="추가하기">+</button>
-          </form>
+            <button type="text" id="submit">+</button>
+        </p>
            <div class='unDoneTitle'>
             <ul>해야 할 일 목록</ul>
         </div>
-        <div class ='unDoneList'>
-            <li><p>리스트</p> <button class="delete" /></li>
-            <li><p>리스트</p> <button class="delete" /></li>
-            <li><p>리스트</p> <button class="delete" /></li>
-            <li><p>리스트</p> <button class="delete" /></li>
-            <li><p>리스트</p> <button class="delete" /></li>
+        <div class ='unDoneList', id="unDoneList">
+            <li class="unDoneListItem"><p>리스트</p> <button class="add" /></li>
         </div>
         <div class='doneTitle'>
             <ul>한 일 목록</ul>
@@ -43,6 +40,6 @@
         </div>
     </div>
 </body>
-<script src="script.js"></script>
 
 </html>
+<script src="./script.js"></script>

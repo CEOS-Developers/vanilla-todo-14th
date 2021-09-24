@@ -1,13 +1,13 @@
 @font-face {
-    font-family: "My font";
-    src: url("assets/SSAntRegular_otf.otf");
+  font-family: 'My font';
+  src: url('assets/SSAntRegular_otf.otf');
 }
 
 /*basic design*/
 body {
   width: 100vw;
   height: 100vh;
-  background: #86A8C5;
+  background: #86a8c5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
 
   font-size: 24px;
   align-content: center;
-  font-family: "My font";
+  font-family: 'My font';
 }
 
 input,
@@ -44,22 +44,22 @@ p {
   padding-top: 30px;
   padding-bottom: 50px;
 }
-.unDoneTitle{
+.unDoneTitle {
   text-align: left;
   padding-left: 20px;
   padding-bottom: 30px;
 }
-.unDoneList{
+.unDoneList {
   text-align: left;
   padding-left: 20px;
   padding-bottom: 30px;
 }
-.doneTitle{
+.doneTitle {
   text-align: left;
   padding-left: 20px;
   padding-bottom: 30px;
 }
-.doneList{
+.doneList {
   text-align: left;
   padding-left: 20px;
   padding-bottom: 30px;
@@ -70,17 +70,16 @@ button {
   border: 1px;
   color: black;
   font-size: 18px;
-  width: 100px;
+  width: 30px;
   margin: 10px 0 0;
   cursor: pointer;
 }
-input[type="text"] {
+
+input[type='text'] {
   margin-bottom: 30px;
   margin-left: 20px;
-  padding-left: 20px;
-  padding-bottom: 30px;
-  width: 150px;
-  font-size: 18px;
+  width: 180px;
+  font-size: 15px;
   line-height: 18px;
   height: 18px;
   padding: 10px;
@@ -89,9 +88,15 @@ input[type="text"] {
   border-radius: 6px;
   color: #888;
 }
-.delete{
+.delete {
   width: 20px;
   height: 20px;
-  background: url("img/bin.png");
+  background: url('img/bin.png');
+  background-size: contain;
+}
+.add {
+  width: 20px;
+  height: 20px;
+  background: url('img/bin.png');
   background-size: contain;
 }
