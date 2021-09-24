@@ -1,4 +1,97 @@
-html,
+@font-face {
+    font-family: "My font";
+    src: url("assets/SSAntRegular_otf.otf");
+}
+
+/*basic design*/
 body {
+  width: 100vw;
+  height: 100vh;
+  background: #86A8C5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #000;
   margin: 0;
+  padding: 0;
+
+  font-size: 24px;
+  align-content: center;
+  font-family: "My font";
+}
+
+input,
+button,
+ul,
+p {
+  all: unset;
+}
+
+.container {
+  width: 300px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  background: white;
+}
+.title {
+  font-weight: 200;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.unDoneTitle{
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.unDoneList{
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.doneTitle{
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.doneList{
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+
+button {
+  background: none;
+  border: 1px;
+  color: black;
+  font-size: 18px;
+  width: 100px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+input[type="text"] {
+  margin-bottom: 30px;
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+  width: 150px;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid black;
+  background: #fff;
+  border-radius: 6px;
+  color: #888;
+}
+.delete{
+  width: 20px;
+  height: 20px;
+  background: url("img/bin.png");
+  background-size: contain;
 }
