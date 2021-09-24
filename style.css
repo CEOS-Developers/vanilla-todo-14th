@@ -21,6 +21,11 @@
   padding-right: 10px;
 }
 
+ul li.checked {
+  color: gray;
+  text-decoration: line-through;
+}
+
 /* close */
 .close img {
   width: 20px;

@@ -13,8 +13,10 @@ Form.addEventListener("submit", (e) => {
   //waitingList.textContent = location;
 });
 
-// 1) input창에 입력
+// input창에 입력
 let itemList = [];
+let finishedItem = [];
+
 let inputButton = document.querySelector("button");
 inputButton.addEventListener("click", addItem);
 
@@ -28,11 +30,7 @@ function addItem() {
   showList();
 }
 
-// function save_item() {
-//   localStorage.setItem("items", JSON.stringify(todoList));
-// }
-
-// 2) ul출력
+// ul출력
 
 function showList() {
   let list = "";
@@ -45,6 +43,19 @@ function showList() {
       ">" +
       "<img src='img/bin.png'/>" +
       "</button></li>";
+    // list +=
+    //   "<li id='list" +
+    //   i +
+    //   "'><button class='listBtn' onclick='movingFinish(" +
+    //   i +
+    //   ")'>" +
+    //   "<span class='text'>" +
+    //   itemList[i] +
+    //   "</span></button><button class='close' id=" +
+    //   i +
+    //   ">" +
+    //   "<img src='img/bin.png'/>" +
+    //   "</button></li>";
   }
   document.getElementById("waitingList").innerHTML = list;
   console.log(itemList);
@@ -62,9 +73,28 @@ function deleteItem() {
   showList();
 }
 
-// 3) 대기중의 숫자 count
+// 대기중의 숫자 count
 
 function waitingCount() {
   let count = itemList.length;
   document.getElementById("waitingCount").innerHTML = count;
 }
+
+// 4) toggle
+
+let checkList = document.querySelector("#waitingList");
+checkList.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    // finishedItem.push(event.target.value);
+    // document.getElementById("finishedList").innerHTML = event.currentTarget;
+    // console.log(finishedItem);
+    event.target.classList.toggle("checked");
+  }
+});
+
+// 완료됨으로 옮기기
+// function movingFinish(cnt) {
+//   var text = checkList.getElementsByClassName("text")[0].innerText;
+
+//   document.getElementById("finishedList").innerHTML += "안녕";
+// }
