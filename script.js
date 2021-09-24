@@ -46,10 +46,9 @@ function showList() {
       "<img src='img/bin.png'/>" +
       "</button></li>";
   }
-  // list += "</ul>";
   document.getElementById("waitingList").innerHTML = list;
-  console.log(list);
   console.log(itemList);
+  waitingCount();
 
   let deleteButtons = document.querySelectorAll(".close");
   for (let i = 0; i, deleteButtons.length; i++) {
@@ -64,3 +63,8 @@ function deleteItem() {
 }
 
 // 3) 대기중의 숫자 count
+
+function waitingCount() {
+  let count = itemList.length;
+  document.getElementById("waitingCount").innerHTML = count;
+}
