@@ -1,3 +1,44 @@
-.input {
+/* h2 box */
+
+.container h2 {
+  margin-left: 15px;
+}
+
+/* ul box */
+.container ul {
+  margin-left: 15px;
   display: flex;
+  flex: 1;
+  list-style: none;
+}
+
+/* input box */
+.inputBox {
+  height: 50px;
+  padding: 8px;
+  box-shadow: 0 5px 10px gray;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputBox input {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 15px;
+  padding: 6px;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.inputBox button {
+  background: #2ec1ac;
+  display: flex;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-left: 4px;
+  font-weight: 100;
 }

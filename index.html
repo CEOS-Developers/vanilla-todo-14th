@@ -11,14 +11,14 @@
   <body>
     <div class="container">
       <h2>대기중(0)</h2>
-      <ul></ul>
+      <ul id="waitingList"></ul>
       <h2>완료됨(0)</h2>
-      <ul></ul>
-      <form>
-        <input placeholder="새로운 할 일 추가" />
-        <button type="submit">+</button>
+      <ul id="finishedList"></ul>
+      <form class="inputBox">
+        <input id="input" type="text" placeholder="새로운 할 일 추가" />
+        <button type="submit" onclick="addRow()">+</button>
       </form>
     </div>
+    <script src="script.js" defer></script>
   </body>
-  <script src="script.js"></script>
 </html>
