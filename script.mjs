@@ -1,142 +1,107 @@
 'use strict';
 import {Item} from './item.mjs'
 
-
+// Use only one, global array:itemList
+// Each element is object of class:Item
 let itemList = [];
 
+// Bring node from index.html
 let addButton = document.querySelector('.add__button');
-let newItem = document.querySelector('.add__item');
+let addInput = document.querySelector('.add__input');
 let waitingCount = document.querySelector('.waiting__count');
 let doneCount = document.querySelector('.done__count');
-
-// addButton : when input is not null , append item to itemList
-addButton.addEventListener("click", ()=>{
-
-  if (newItem.value!=""){
-    itemList.push(new Item(newItem.value));
-    newItem.value="";
-  }
-
-  render();
-
-})
-
-// render : show items by the type of their state
-function render(){
-  let waitingNum=0;
-  let doneNum=0;
-
-  let waitingListInnerHTML ="<ul>";
-  let doneListInnerHTML = "<ul>";
-
-
-  for (let i = 0; i <itemList.length; i++){
-    
-    if (itemList[i].state=="waiting"){
-      waitingListInnerHTML+= `<li class="waitingListTag" style="margin:10px 0">` 
-      + `<span class= "waiting__list__item" id = `+i+`>`+itemList[i].content+`</span>`
-      + `<button class="deleteButton" style="display:none">
-      <i class="fas fa-trash"></i>
-      </button>`
-      +"</li>"
-      ;
-      waitingNum+=1;
-
-    }
-
-    else{
-      doneListInnerHTML+= `<li class="doneListTag" style="margin:10px 0">` 
-      +`<span class= "done__list__item" id = `+i+` style="text-decoration: 2px solid line-through red">`+itemList[i].content+`</span>`
-      + `<button class="deleteButton" style="display:none">
-      <i class="fas fa-trash"></i>
-      </button>`
-      +"</li>";
-      doneNum+=1;
-    }
-  }
-
-
-  waitingListInnerHTML+="</ul>";
-  doneListInnerHTML+="</ul>";
-
-  document.querySelector(".waiting__list").innerHTML = waitingListInnerHTML;
-  document.querySelector(".done__list").innerHTML = doneListInnerHTML;
-
-
-  // add eventlistners
-  let deleteButtonList = document.querySelectorAll('.deleteButton');
-  for (let i =0; i<deleteButtonList.length; i++){
-    deleteButtonList[i].addEventListener("click", deleteItem);
-  }
-
-  let waitingElementList = document.querySelectorAll('.waiting__list__item');
-  for (let i =0; i<waitingElementList.length;i++){
-    waitingElementList[i].addEventListener("click",changeState);
-    
-  }
-
-  let doneElementList = document.querySelectorAll('.done__list__item');
-  for (let i =0; i<doneElementList.length;i++){
-    doneElementList[i].addEventListener("click",changeState);
-  }
-
-  let waitingListTag = document.querySelectorAll('.waitingListTag');
-  let doneListTag=document.querySelectorAll('.doneListTag');
-  for (let i =0; i<waitingListTag.length; i++){
-    waitingListTag[i].addEventListener("mouseover",appearDeleteButton);
-    waitingListTag[i].addEventListener("mouseout",disappearDeleteButton);
-  }
-  for (let i =0; i<doneListTag.length;i++){
-    doneListTag[i].addEventListener("mouseover",appearDeleteButton);
-    doneListTag[i].addEventListener("mouseout",disappearDeleteButton);
-    
-  }
-
-
-
-  //update counts
-  waitingCount.innerHTML=waitingNum;
-  doneCount.innerHTML=doneNum;
-
-  localStorage.clear();
-  saveToLocalStorage(itemList);
-  
-}
-
-
-function saveToLocalStorage(itemList){
-  itemList.forEach((v,i)=>{
-    localStorage.setItem(String(i),JSON.stringify(v));
-  })
-  console.log(localStorage);
-
-}
-
-function LoadFromLocalStorage(){
-  const res=[];
-  const keys= Object.keys(localStorage);
-  for (let i =0; i< keys.length; i++){
-    const key = keys[i];
-    const value= localStorage[key];
-    res.push(JSON.parse(value));
-  }
-  
-  itemList=res;
-}
-
-
-
 
 // initial run to load from local Storage
 LoadFromLocalStorage();
 render();
 
+// eventlistner on addButton : when input is not null , append item to itemList
+addButton.addEventListener("click", ()=>{
+  if (addInput.value!=""){
+    itemList.push(new Item(addInput.value));
+    addInput.value="";
+  }
+
+  render();
+});
+
+// render : make innerHTML of each list with reduce
+function render(){
+  let waitingCountNum=0;
+  let doneCountNum=0;
+
+  let waitingListInnerHTML ="";
+  let doneListInnerHTML = "";
+
+  // waitingDoneInnerHTML is an array of InnerHTMLs
+  const waitingDoneInnerHTML=itemList.reduce((accum,value,index)=>{
+    const accumIndex = (value.state==="waiting")? 0 : 1;
+    const textDecoration = (value.state==="waiting")? "": `style="text-decoration: 2px solid line-through red"`;
+
+    accum[accumIndex]+= `<li class="${value.state}ListTag" style="margin:10px 0">` 
+    + `<span class= "${value.state}__list__item" id = "${index}" ${textDecoration}>`+value.content+`</span>`
+    + `<button class="deleteButton" style="display:none">
+    <i class="fas fa-trash"></i>
+    </button>`
+    +"</li>";
+    return accum;
+
+  },[waitingListInnerHTML,doneListInnerHTML]);
+  
+
+  document.querySelector(".waiting__list").innerHTML = waitingDoneInnerHTML[0];
+  document.querySelector(".done__list").innerHTML = waitingDoneInnerHTML[1];
 
 
+  // add eventlistners
+  addEventListenerAll('.deleteButton','click', deleteItem);
+  addEventListenerAll('.waiting__list__item','click',changeState);
+  addEventListenerAll('.done__list__item','click',changeState);
+  addEventListenerAll('.waitingListTag','mouseover',appearDeleteButton);
+  addEventListenerAll('.waitingListTag','mouseout',disappearDeleteButton);
+  addEventListenerAll('.doneListTag','mouseover',appearDeleteButton);
+  addEventListenerAll('.doneListTag','mouseout',disappearDeleteButton);
+
+  //update counts
+  waitingCount.innerHTML=count(itemList,'waiting');
+  doneCount.innerHTML=count(itemList,'done');
+
+  //update local storage
+  localStorage.clear();
+  saveToLocalStorage(itemList);
+}
+
+function saveToLocalStorage(itemList){
+  itemList.forEach((value,index)=>{
+    localStorage.setItem(String(index),JSON.stringify(value));
+  })
+}
+
+function LoadFromLocalStorage(){
+  const keys= Object.keys(localStorage);
+
+  itemList=keys.reduce((accum,value)=>{
+    accum.push(JSON.parse(localStorage[value]));
+    return accum;
+  },[]);
+}
+
+function count(array,state){
+  return array.reduce((accum,value)=>{
+    accum=(value.state===state) ? accum+1: accum;
+    return accum;
+  },0)
+}
+
+function addEventListenerAll(selector,eventName,eventHandler){
+  let nodeList = document.querySelectorAll(selector);
+  nodeList.forEach(element=>{
+    element.addEventListener(eventName,eventHandler);
+  })
+}
 
 // change the state of item
 function changeState(){
-  
   let id = this.getAttribute("id");
   
   const temp = itemList[id];
@@ -149,7 +114,9 @@ function changeState(){
   render();
 }
 
-// delete the item
+//!CAUTION: firstChild and lastChild depend on structure of DOM ...
+
+//delete the item
 function deleteItem(){
   let id = this.parentNode.firstChild.getAttribute("id");
   itemList.splice(id,1 );
@@ -157,7 +124,7 @@ function deleteItem(){
   render();
 }
 
-// appearDeleteButton
+//make deleteButton visible
 function appearDeleteButton(){
   const button = this.lastChild;
   button.style.display="inline";
@@ -169,14 +136,9 @@ function appearDeleteButton(){
   });
 }
 
-// disappearDeleteButton
+//make deleteButton invisible
 function disappearDeleteButton(){
   const button = this.lastChild;
   button.style.display="none";
   this.style.color="black";
-}
-
-// localStorage
-function hello(){
-  alert('hello!');
 }
