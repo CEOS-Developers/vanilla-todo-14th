@@ -1,7 +1,7 @@
-class Item{
-  constructor(content){
+class Item {
+  constructor(content) {
     this.content = content;
-    this.state='waiting';
+    this.state = 'waiting';
   }
 }
-export {Item};
+export { Item };

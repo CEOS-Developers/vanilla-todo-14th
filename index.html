@@ -5,44 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Todo</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/2fdda89094.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2fdda89094.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer type="module" src="script.mjs"></script>
   </head>
 
   <!-- body = waiting part + done part + add part -->
   <body>
     <main class="container">
-
       <!-- waiting part -->
       <section class="waiting__container">
-        <img class="lion" src="./img/lion.png" alt="lion">
-        <div class="waiting__title"><h2>✍진행 중인 작업(<span class ="waiting__count">0</span>)</h2></div>
-        <div class="waiting__content">
-          <ul class="waiting__list">
-          </ul>
+        <img class="lion" src="./img/lion.png" alt="lion" />
+        <div class="waiting__title">
+          <h2>✍진행 중인 작업(<span class="waiting__count">0</span>)</h2>
         </div>
-        
+        <div class="waiting__content">
+          <ul class="waiting__list"></ul>
+        </div>
       </section>
 
       <!-- done part -->
       <section class="done__container">
-        <div class="done__title"><h2>😆완료된 작업(<span class ="done__count">0</span>)</h2></div>
+        <div class="done__title">
+          <h2>😆완료된 작업(<span class="done__count">0</span>)</h2>
+        </div>
         <div class="done__content">
-          <ul class="done__list">
-          </ul>
+          <ul class="done__list"></ul>
         </div>
       </section>
 
       <!-- add part -->
       <section class="add__container">
-        <input class= "add__input" type="text"
-        style="text-align: center;"
-         placeholder="새로운 할 일을 추가해주세요!"
-         onfocus="this.placeholder=``; this.style.textAlign=`left`"
-         onblur="this.placeholder=`새로운 할 일을 추가해주세요!`; this.style.textAlign=`center`">
-        <button class = "add__button">+</button>
+        <input
+          class="add__input"
+          type="text"
+          style="text-align: center"
+          placeholder="새로운 할 일을 추가해주세요!"
+          onfocus="this.placeholder=``; this.style.textAlign=`left`"
+          onblur="this.placeholder=`새로운 할 일을 추가해주세요!`; this.style.textAlign=`center`"
+        />
+        <button class="add__button">+</button>
       </section>
-
     </main>
   </body>
 </html>
