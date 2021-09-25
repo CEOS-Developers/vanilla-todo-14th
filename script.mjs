@@ -8,8 +8,8 @@ let itemList = [];
 // Bring node from index.html
 const addButton = document.querySelector('.add__button');
 const addInput = document.querySelector('.add__input');
-let waitingCount = document.querySelector('.waiting__count');
-let doneCount = document.querySelector('.done__count');
+const waitingCount = document.querySelector('.waiting__count');
+const doneCount = document.querySelector('.done__count');
 const lion = document.querySelector('.lion');
 
 // initial run to load from local Storage
