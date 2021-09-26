@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'DungGeunMo';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,12 +33,12 @@ p {
   all: unset;
 }
 li {
-    list-style:none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom:20px;
-    cursor:pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 .container {
   width: 350px;
@@ -48,48 +49,48 @@ li {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
   background: white;
 }
-.todo-list{
-    flex:1;
-    padding:0 20px;
-    overflow: auto;
+.todo-list {
+  flex: 1;
+  padding: 0 20px;
+  overflow: auto;
 }
 .todo-list::-webkit-scrollbar {
   display: none;
 }
-.todo-input-wrapper{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+.todo-input-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
-.title{
+.title {
   padding-left: 20px;
 }
-#done{
-  text-decoration:line-through;
-  color:lightgray;
+#done {
+  text-decoration: line-through;
+  color: lightgray;
 }
-#todo-input{
-    border: 1px solid lightgray;
-    width: 85%;
-    border-radius: 20px;
-    margin-right: 10px;
-    text-align: center;
+#todo-input {
+  border: 1px solid lightgray;
+  width: 85%;
+  border-radius: 20px;
+  margin-right: 10px;
+  text-align: center;
 }
-#todo-button{
-    width: 30px;
-    height: 30px;
-    background-color: #2ec1ac;
-    border-radius: 50%;
-    text-align: center;
-    color:white;
+#todo-button {
+  width: 30px;
+  height: 30px;
+  background-color: #2ec1ac;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
 }
-img{
-  width:20px;
-  height:20px;
-  opacity:0;
+img {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
 }
-img:hover{
-  transition:opacity .3s ease; 
-  opacity:1;
+img:hover {
+  transition: opacity 0.3s ease;
+  opacity: 1;
 }
