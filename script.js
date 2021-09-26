@@ -43,8 +43,8 @@ addTodoButton.addEventListener('click', onClickAddTodo);
 function toggleTodo(e) {
   todoArray.forEach((todo) => {
     if (todo.id === parseInt(e.target.id)) {
-      const li = e.target;
-      li.remove();
+      const targetTodoListItem = e.target;
+      targetTodoListItem.remove();
       //type을 반전
       todo.type = !todo.type;
       createTodoList(todo);
@@ -55,7 +55,6 @@ function toggleTodo(e) {
 
 /*delete todo*/
 function deleteTodo(e) {
-  console.log(e);
   const li = e.target.parentElement;
   li.remove();
   todoArray = todoArray.filter((todo) => todo.id != parseInt(li.id));
