@@ -1,0 +1,157 @@
+/* Global */
+:root {
+  /* Color */
+  --color-dark-orange: #ac5300;
+  --color-white: #ffffff;
+  --color-pink: #fdc7ff;
+  --color-waiting: #fff5bf;
+  --color-done: #fff1a0;
+  --color-add: #fff5bf;
+
+  /* Font size */
+  --font-medium: 18px;
+  --font-small: 16px;
+
+  /* Size */
+  --size-border-radius: 15px;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+  font-family: 'ELAND_Choice_M';
+}
+
+/* default settings */
+
+html,
+body {
+  margin: 0;
+}
+
+input,
+button,
+ul,
+p {
+  all: unset;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  /* Center Container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Coloring */
+  background-color: var(--color-dark-orange);
+}
+
+/* Typography */
+@font-face {
+  font-family: 'ELAND_Choice_M';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+h2 {
+  font-size: var(--font-medium);
+}
+
+.container {
+  width: 350px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+/* waiting part */
+.waiting__container {
+  background-color: var(--color-waiting);
+  height: 275px;
+  position: relative;
+  border-top-left-radius: var(--size-border-radius);
+  border-top-right-radius: var(--size-border-radius);
+}
+.waiting__title {
+  margin: 0 15px;
+}
+.waiting__content {
+  overflow-y: scroll;
+  height: 80%;
+}
+
+span.waiting__list__item {
+  padding: 0 15px;
+}
+
+.waiting__list__item .deleteButton {
+  margin: 0 10px;
+  display: none;
+}
+
+.lion {
+  opacity: 0;
+  width: 50%;
+  top: 150px;
+  left: 75px;
+  position: absolute;
+  transition: all 0.5s ease-out;
+}
+/* done part */
+.done__container {
+  background-color: var(--color-done);
+  height: 275px;
+}
+.done__title {
+  margin: 0 15px;
+}
+.done__content {
+  overflow-y: scroll;
+  height: 80%;
+}
+.done__list__item {
+  margin: 0 15px;
+}
+.done__list__item .deleteButton {
+  margin: 0 10px;
+}
+
+/* add part */
+.add__container {
+  background-color: var(--color-add);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom-left-radius: var(--size-border-radius);
+  border-bottom-right-radius: var(--size-border-radius);
+}
+.add__container input {
+  margin: 10px 0 10px 10px;
+  padding: 0 10px;
+  background-color: white;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: var(--size-border-radius);
+  width: 270px;
+}
+.add__container button {
+  margin: 10px 10px 10px 0;
+  background-color: var(--color-dark-orange);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+}
