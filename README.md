@@ -67,7 +67,7 @@ https://bonjunku.github.io/vanilla-todo-14th/
 
 ### input태그에서 발생하는 Event에는 어떤 것이 있고, 어떤 방법이 가장 적합할까요?<br />
 
-: <a herf="https://maxkim-j.github.io/posts/keyboard-input">여기</a>를 참고합시다.<br />
+: <a herf="https://maxkim-j.github.io/posts/keyboard-input">여기(https://maxkim-j.github.io/posts/keyboard-input)</a>를 참고합시다.<br />
 7가지 이벤트가 있으며,
 focus => keyDown => (keyPress) => input => keyUp => blur => change 순으로 발생합니다.
 
