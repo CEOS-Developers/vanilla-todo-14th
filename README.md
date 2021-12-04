@@ -1,3 +1,5 @@
+[이번 과제 관련해서 쓴 노션 글!](https://kiuk.notion.site/Vanila-JS-React-feat-Todo-List-acea8848a4e94d748f95ec5ffb40e142)
+
 정말 간만에 바닐라 JS를 다뤄보네요..
 
 이전에도 바닐라 JS로 간단한 프로젝트를 만든 적이 있었는데, 당시에는 Class로 구현을 했고 지금 코드를 다시 살펴보니 상태가 아니라 상황을 기준으로 코드를 짜서 확장성이 구려보이네요우
