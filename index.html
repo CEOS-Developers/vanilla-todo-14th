@@ -6,11 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Todo</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./src/App.js" defer></script>
 </head>
 
 <body>
-    <div class="container"></div>
+    <div class="app container">
+        
+        <div class="todo-list-title-container">
+            <p class="todo-large-text list-title">대기중</p>
+            <p class="todo-large-text waiting-todo-list-count"></p>
+        </div>
+        <section class="todo-list-container waiting-list-container">
+            <ul class="todo-list waiting-list">
+
+            </ul>
+        </section>
+
+        <div class="todo-list-title-container">
+            <p class="todo-large-text list-title">완료</p>
+            <p class="todo-large-text finished-todo-list-count"></p>
+        </div>
+        <section class="todo-list-container finished-list-container">
+            <ul class="todo-list finished-list">
+
+            </ul>
+        </section>
+
+        <footer>
+            <form class="add-todo-form">
+                <div class="add-todo-input-container">
+                    <input type="text" class="todo-middle-text add-todo-input" placeholder="새로운 할 일 추가" />
+                </div>
+                <button type="submit" class="todo-middle-text add-todo-btn">
+                    추가
+                </button>
+            </form>
+        </footer>
+
+    </div>
 </body>
-<script src="script.js"></script>
 
 </html>
